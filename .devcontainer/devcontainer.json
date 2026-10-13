@@ -33,15 +33,18 @@
     "portsAttributes": {
         "5173": {
             "label": "octofit-tracker-frontend",
-            "requireLocalPort": true
+            "requireLocalPort": true,
+            "visibility": "public"
         },
         "8000": {
             "label": "octofit-tracker-api",
-            "requireLocalPort": true
+            "requireLocalPort": true,
+            "visibility": "public"
         },
         "27017": {
             "label": "octofit-tracker-mongodb",
-            "requireLocalPort": true
+            "requireLocalPort": true,
+            "visibility": "private"
         }
     }
 }
