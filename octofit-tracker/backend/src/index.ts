@@ -4,11 +4,13 @@ import apiRouter from './routes/index.js'
 
 const app = express()
 const codespaceName = process.env.CODESPACE_NAME
-const frontendOrigin = codespaceName
-  ? `https://${codespaceName}-5173.app.github.dev`
-  : 'http://localhost:5173'
+const frontendOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  ...(codespaceName ? [`https://${codespaceName}-5173.app.github.dev`] : []),
+]
 
-app.use(cors({ origin: frontendOrigin }))
+app.use(cors({ origin: frontendOrigins }))
 app.use(express.json())
 app.use(apiRouter)
 
